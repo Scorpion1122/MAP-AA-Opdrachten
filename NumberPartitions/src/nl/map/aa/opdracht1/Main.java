@@ -6,7 +6,8 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		EersteVersie eerste = new EersteVersie();
-		eerste.go();
+		StringPartitioner p = new StringPartitioner();
+		p.start(5);
+		p.printPartitionStrings();
 	}
 }
