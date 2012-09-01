@@ -12,7 +12,7 @@ public class Partition
 		numbers = new ArrayList<Integer>();
 	}
 
-	public final List<Integer> getNummers()
+	public final List<Integer> getNumbers()
 	{
 		return numbers;
 	}
