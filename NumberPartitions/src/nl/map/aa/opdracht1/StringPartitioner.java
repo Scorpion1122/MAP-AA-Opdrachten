@@ -6,13 +6,11 @@ import java.util.List;
 public class StringPartitioner {
 	private List<String> partitionStrings;
 
-//	private List<Partition> partitions;
-
-	private int number = 0;
+	private List<Partition> partitions;
 
 	public StringPartitioner() {
 		partitionStrings = new ArrayList<String>();
-//		partitions = new ArrayList<Partition>();
+		partitions = new ArrayList<Partition>();
 	}
 
 	public StringPartitioner(final int numberToPartition) {
@@ -21,7 +19,6 @@ public class StringPartitioner {
 	}
 
 	public void start(final int numberToPartition) {
-		number = numberToPartition;
 		partition(numberToPartition, numberToPartition, "");
 	}
 
@@ -32,14 +29,9 @@ public class StringPartitioner {
 			return;
 		}
 
-		Partition p = new Partition();
-
 		for (int i = Math.min(max, numberToPartition); i >= 1; i--) {
 			partition(numberToPartition - i, i, partitionString + " " + i);
-			p.add(i);
 		}
-
-//		partitions.add(p);
 
 		/**
 		 * voor elk getal(i) in N: tel eerste twee op if resultaat gelijk aan i
@@ -52,7 +44,7 @@ public class StringPartitioner {
 		return partitionStrings;
 	}
 
-//	public final List<Partition> getPartitions() {
-//		return partitions;
-//	}
+	public final List<Partition> getPartitions() {
+		return partitions;
+	}
 }

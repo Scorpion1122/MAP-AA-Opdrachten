@@ -66,6 +66,14 @@ public class PartitionCommandLine {
 	public void printLine(String line) {
 		System.out.println(line);
 	}
+	
+	public void printPartitions(List<Partition> partitionStrings, int number) {
+		printLine("Partitions for the number " + number + ":");
+
+		for (Partition p : partitionStrings) {
+			printLine("*" + p.toString());
+		}
+	}
 
 	public void printPartitionStrings(List<String> partitionStrings, int number) {
 		printLine("Partitions for the number " + number + ":");
